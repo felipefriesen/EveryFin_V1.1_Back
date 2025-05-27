@@ -9,6 +9,13 @@ dotenv.config()
 
 const app = express()
 app.use(express.json())
+import cors from 'cors'
+app.use(cors({ origin: 'http://localhost:5175', credentials: true }))
+import cors from 'cors'
+app.use(cors({
+  origin: 'http://localhost:5175',  // porta padrão do Vite
+  credentials: true
+}))
 
 app.use('/auth', authRouter)
 
